@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimem name = "titleText">40sp</dimem>
+    <dimen name = "constrainTitle">30dp</dimen>
+    <dimen name = "titlePaddingLeftRight">105dp</dimen>
+    <dimen name = "mainBoxMargin">5dp</dimen>
+    <dimen name = "titleMargin">15dp</dimen>
+    <dimen name = "titleMarginLeftRight">7dp</dimen>
+    <dimen name = "buttonWidthHeight">90dp</dimen>
+    <dimen name = "buttonMargin">30dp</dimen>
+</resources>
