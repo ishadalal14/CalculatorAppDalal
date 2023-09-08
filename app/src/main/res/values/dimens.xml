@@ -3,7 +3,7 @@
 <resources>
 
     <dimen name = "constrainTitle">30dp</dimen>
-    <dimen name = "titlePaddingLeftRight">120dp</dimen>
+    <dimen name = "titlePaddingLeftRight">100dp</dimen>
     <dimen name = "mainBoxMargin">5dp</dimen>
     <dimen name = "titleMargin">15dp</dimen>
     <dimen name = "titleMarginLeftRight">7dp</dimen>

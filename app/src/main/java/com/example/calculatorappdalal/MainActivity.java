@@ -2,30 +2,60 @@ package com.example.calculatorappdalal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     int numInput;
     String answer;
+
+    EditText valOne;
+    EditText valTwo;
+    EditText operationId;
+
+    TextView answerTextId;
+
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent i = getIntent();
+
+        valOne = findViewById(R.id.valueOneId);
+        valTwo = findViewById(R.id.valueTwoId);
+        operationId = findViewById(R.id.operationTextId);
+        answerTextId = findViewById(R.id.answerId);
+
+        b1 = findViewById(R.id.button1);
+        b2 = findViewById(R.id.button2);
+        b3= findViewById(R.id.button3);
+        b4 = findViewById(R.id.button4);
+        b5 = findViewById(R.id.button5);
+        b6 = findViewById(R.id.button6);
+        b7 = findViewById(R.id.button7);
+        b8 = findViewById(R.id.button8);
+        b9 = findViewById(R.id.button9);
+        b0 = findViewById(R.id.button0);
     }
 
     public void calculate(View v){
 
-        EditText valOne = findViewById(R.id.valueOneId);
+
+
         double val1 = Integer.parseInt(valOne.getText().toString());
 
-        EditText valTwo = findViewById(R.id.valueTwoId);
+
         double val2 = Integer.parseInt(valTwo.getText().toString());
 
-        EditText operationId = findViewById(R.id.operationTextId);
+
         String operation = operationId.getText().toString();
 
         double ans =0;
@@ -45,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
         answer = Double.toString(ans);
 
-        TextView answerTextId = findViewById(R.id.answerId);
         answerTextId.setText(answer);
 
 
@@ -53,46 +82,47 @@ public class MainActivity extends AppCompatActivity {
         //equal to the answer after converting the answer back to a String to be displayed
     }
 
+
+    public void clearBoxes(View v){
+        valOne.setText("");
+        valTwo.setText("");
+        operationId.setText("");
+        answerTextId.setText("");
+
+    }
+
     public void numClicked(View v){
+        String numInput = "";
         if(v.getId()== R.id.button1){
-            Log.i("Isha", "Selected 1");
-            numInput = 1;
+            numInput += "1";
         }
         else if(v.getId()== R.id.button2){
-            Log.i("Isha", "Selected 2");
-            numInput = 2;
+            numInput += "2";
         }
         else if(v.getId()== R.id.button3){
-            Log.i("Isha", "Selected 3");
-            numInput = 3;
+            numInput += "3";
         }
         else if(v.getId()== R.id.button4){
-            Log.i("Isha", "Selected 4");
-            numInput = 4;
+            numInput += "4";
         }
         else if(v.getId()== R.id.button5){
-            Log.i("Isha", "Selected 5");
-            numInput = 5;
+            numInput += "5";
         }
         else if(v.getId()== R.id.button6){
-            Log.i("Isha", "Selected 6");
-            numInput = 6;
+            numInput += "6";
         }
         else if(v.getId()== R.id.button7){
-            Log.i("Isha", "Selected 7");
-            numInput = 7;
+
+            numInput += "7";
         }
         else if(v.getId()== R.id.button8){
-            Log.i("Isha", "Selected 8");
-            numInput = 8;
+            numInput += "8";
         }
         else if(v.getId()== R.id.button9){
-            Log.i("Isha", "Selected 9");
-            numInput = 9;
+            numInput += "9";
         }
         else if(v.getId()== R.id.button0){
-            Log.i("Isha", "Selected 0");
-            numInput = 0;
+            numInput += "0";
         }
     }
 

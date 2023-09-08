@@ -70,12 +70,14 @@
         android:layout_width="153dp"
         android:layout_height="51dp"
         android:text="Clear"
+        android:onClick="clearBoxes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.976"
+        />
 
     <Button
         android:id="@+id/plusButton"
@@ -290,6 +292,7 @@
         android:layout_height="wrap_content"
         android:background="@color/md_theme_light_primary"
         android:elegantTextHeight="true"
+        android:gravity="center_horizontal"
         android:paddingLeft="@dimen/titlePaddingLeftRight"
         android:paddingTop="15dp"
         android:paddingRight="@dimen/titlePaddingLeftRight"
@@ -299,7 +302,7 @@
         android:textColor="@color/md_theme_light_onPrimary"
         android:textSize="35sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="21dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
