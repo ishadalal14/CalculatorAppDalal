@@ -11,16 +11,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int numInput;
+    String numInput;
     String answer;
 
-    EditText valOne;
-    EditText valTwo;
-    EditText operationId;
+    EditText equation;
+
+    String eqn;
 
     TextView answerTextId;
 
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0;
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0, bPlus, bMinus, bTimes, bDivide, bNeg, bDec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        valOne = findViewById(R.id.valueOneId);
-        valTwo = findViewById(R.id.valueTwoId);
-        operationId = findViewById(R.id.operationTextId);
+        equation = findViewById(R.id.equationId);
         answerTextId = findViewById(R.id.answerId);
 
         b1 = findViewById(R.id.button1);
@@ -44,37 +42,57 @@ public class MainActivity extends AppCompatActivity {
         b8 = findViewById(R.id.button8);
         b9 = findViewById(R.id.button9);
         b0 = findViewById(R.id.button0);
+        bPlus = findViewById(R.id.plusButton);
+        bMinus = findViewById(R.id.minusButton);
+        bTimes = findViewById(R.id.timesButton);
+        bDivide = findViewById(R.id.divideButton);
+        bDec = findViewById(R.id.decButton);
+        bNeg = findViewById(R.id.negButton);
+
     }
 
     public void calculate(View v){
+        eqn = equation.getText().toString();
+        int operationNum = 0;
+        String operation = "";
+        if(eqn.indexOf("*") != -1){
+            operation = "*";
+            operationNum = eqn.indexOf("*");
+            Log.i("Isha", operation);
+        }
+        if(eqn.indexOf("+") != -1){
+            operation = "+";
+            operationNum = eqn.indexOf("+");
+        }
+        if(eqn.indexOf("-") !=-1){
+            operation = "-";
+            operationNum = eqn.indexOf("-");
+        }
+        if(eqn.indexOf("/")!=-1){
+            operation = "/";
+            operationNum = eqn.indexOf("/");
+        }
 
+        String val1 = eqn.substring(0,operationNum);
+        double v1 = Integer.parseInt(val1);
+        String val2 = eqn.substring(operationNum);
+        double v2 = Integer.parseInt(val2);
 
+        double ans = 0;
 
-        double val1 = Integer.parseInt(valOne.getText().toString());
-
-
-        double val2 = Integer.parseInt(valTwo.getText().toString());
-
-
-        String operation = operationId.getText().toString();
-
-        double ans =0;
-
+        if(operation.equals("-")){
+            ans = (double)v1-v2;
+        }
         if(operation.equals("+")){
-            ans = (double)val1 + val2;
+            ans = ((double)v1) + v2;
         }
-        else if(operation.equals("-")){
-            ans = (double)val1-val2;
+        if(operation.equals("*")){
+            ans = (double)v1*v2;
         }
-        else if(operation.equals("*")){
-            ans = (double)val1 * val2;
+        if(operation.equals("/")){
+            ans = (double)v1/v2;
         }
-        else if(operation.equals("/")){
-            ans = (double)val1/val2;
-        }
-
         answer = Double.toString(ans);
-
         answerTextId.setText(answer);
 
 
@@ -83,48 +101,71 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void clearBoxes(View v){
-        valOne.setText("");
-        valTwo.setText("");
-        operationId.setText("");
+    public void clearBoxes(View v) {
+        equation.setText("");
         answerTextId.setText("");
-
+        eqn = "";
     }
 
     public void numClicked(View v){
-        String numInput = "";
         if(v.getId()== R.id.button1){
-            numInput += "1";
+            eqn = eqn + "1";
         }
-        else if(v.getId()== R.id.button2){
-            numInput += "2";
+        if(v.getId()== R.id.button2){
+            eqn = eqn +  "2";
         }
-        else if(v.getId()== R.id.button3){
-            numInput += "3";
+        if(v.getId()== R.id.button3){
+            eqn = eqn +  "3";
         }
-        else if(v.getId()== R.id.button4){
-            numInput += "4";
+        if(v.getId()== R.id.button4){
+            eqn = eqn + "4";
         }
-        else if(v.getId()== R.id.button5){
-            numInput += "5";
+        if(v.getId()== R.id.button5){
+            eqn = eqn + "5";
         }
-        else if(v.getId()== R.id.button6){
-            numInput += "6";
+        if(v.getId()== R.id.button6){
+            eqn = eqn + "6";
         }
-        else if(v.getId()== R.id.button7){
+        if(v.getId()== R.id.button7){
+            eqn = eqn +  "7";
+        }
+        if(v.getId()== R.id.button8){
+            eqn = eqn + "8";
+        }
+        if(v.getId()== R.id.button9){
+            eqn = eqn +  "9";
+        }
+        if(v.getId()== R.id.button0){
+            eqn = eqn + "0";
+        }
+        if(v.getId() == R.id.plusButton){
+            eqn = eqn +  "+";
+        }
+        if(v.getId() ==R.id.minusButton){
+            eqn = eqn + "-";
+        }
+        if(v.getId() ==R.id.timesButton){
+            eqn = eqn +  "*";
+        }
+        if(v.getId()==R.id.divideButton){
+            eqn = eqn +  "/";
 
-            numInput += "7";
         }
-        else if(v.getId()== R.id.button8){
-            numInput += "8";
+        if(v.getId() == R.id.decButton){
+            eqn = eqn + ".";
         }
-        else if(v.getId()== R.id.button9){
-            numInput += "9";
-        }
-        else if(v.getId()== R.id.button0){
-            numInput += "0";
-        }
+
+        equation.setText(eqn);
+
+
+//error is that its setting a new equation every time
+
+        Log.i("Isha", eqn);
     }
+
+
+
+
 
 
 }

@@ -8,31 +8,16 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/valueTwoId"
-        android:layout_width="111dp"
-        android:layout_height="42dp"
+        android:id="@+id/equationId"
+        android:layout_width="396dp"
+        android:layout_height="55dp"
         android:ems="10"
-        android:hint="Value Two"
+        android:hint=""
         android:inputType="text"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204" />
-
-    <EditText
-        android:id="@+id/operationTextId"
-        android:layout_width="111dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:hint="Operation"
-        android:inputType="text"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.204" />
@@ -43,6 +28,7 @@
         android:layout_height="@dimen/buttonWidthHeight"
         android:backgroundTint="@color/md_theme_light_secondary"
         android:text="."
+        android:onClick="numClicked"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +44,7 @@
         android:backgroundTint="@color/md_theme_light_secondary"
         android:text="(-)"
         android:textSize="20sp"
+        android:onClick="numClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.253"
@@ -89,6 +76,7 @@
         android:gravity="center|center_horizontal|center_vertical"
         android:text="+"
         android:textSize="40sp"
+        android:onClick="numClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
@@ -106,6 +94,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="x"
         android:textSize="40sp"
+        android:onClick="numClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.659"
@@ -122,6 +111,7 @@
         android:backgroundTint="@color/md_theme_light_secondary"
         android:text="/"
         android:textSize="40sp"
+        android:onClick="numClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
@@ -139,6 +129,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="-"
         android:textSize="40sp"
+        android:onClick="numClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.364"
@@ -331,20 +322,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
-    <EditText
-        android:id="@+id/valueOneId"
-        android:layout_width="111dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:hint="Value One"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204" />
 
     <TextView
         android:id="@+id/answerId"
