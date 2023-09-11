@@ -3,10 +3,13 @@
 <resources>
 
     <dimen name = "constrainTitle">30dp</dimen>
-    <dimen name = "titlePaddingLeftRight">100dp</dimen>
+    <dimen name = "titlePaddingLeftRight">110dp</dimen>
+    <dimen name = "buttonFont">40sp</dimen>
     <dimen name = "mainBoxMargin">5dp</dimen>
     <dimen name = "titleMargin">15dp</dimen>
     <dimen name = "titleMarginLeftRight">7dp</dimen>
     <dimen name = "buttonWidthHeight">70dp</dimen>
     <dimen name = "buttonMargin">30dp</dimen>
+    <dimen name = "extraButtonWidth">100dp</dimen>
+    <dimen name = "extraButtonHeight">50dp</dimen>
 </resources>

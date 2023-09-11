@@ -2,7 +2,6 @@ package com.example.calculatorappdalal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    String numInput;
     String answer;
 
     EditText equation;
@@ -26,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Intent i = getIntent();
 
         equation = findViewById(R.id.equationId);
         answerTextId = findViewById(R.id.answerId);
@@ -74,23 +70,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         String val1 = eqn.substring(0,operationNum);
-        double v1 = Integer.parseInt(val1);
-        String val2 = eqn.substring(operationNum);
-        double v2 = Integer.parseInt(val2);
+        double v1 = Double.parseDouble(val1);
+        String val2 = eqn.substring(operationNum+1);
+        double v2 = Double.parseDouble(val2);
 
         double ans = 0;
 
         if(operation.equals("-")){
-            ans = (double)v1-v2;
+            ans = v1-v2;
         }
         if(operation.equals("+")){
-            ans = ((double)v1) + v2;
+            ans = v1 + v2;
         }
         if(operation.equals("*")){
-            ans = (double)v1*v2;
+            ans = v1*v2;
         }
         if(operation.equals("/")){
-            ans = (double)v1/v2;
+            ans = v1/v2;
         }
         answer = Double.toString(ans);
         answerTextId.setText(answer);
@@ -107,7 +103,14 @@ public class MainActivity extends AppCompatActivity {
         eqn = "";
     }
 
+    public void reuseAnswer(View v){
+        String ans = answerTextId.getText().toString();
+        answerTextId.setText("");
+        equation.setText(ans);
+    }
+
     public void numClicked(View v){
+        eqn = equation.getText().toString();
         if(v.getId()== R.id.button1){
             eqn = eqn + "1";
         }
