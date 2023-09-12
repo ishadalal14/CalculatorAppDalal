@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CalculatorAppDalal</string>
+    <string name="addition">+</string>
+    <string name = "subtraction">-</string>
+    <string name="multiplication">X</string>
+    <string name ="division">/</string>
 </resources>
