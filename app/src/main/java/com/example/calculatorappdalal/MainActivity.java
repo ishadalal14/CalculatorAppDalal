@@ -10,6 +10,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    //My additional enhancements:
+    /*
+    1) I created a keyboard of buttons that the user can interact with to type their equation in
+    i think this deserves extra points because it shows an extra feature of functionality that goes
+    beyond the expectations of the original project, whihc was just to have 2 input boxes
+    This way, the calculator app would feel more like an authentic calculator app where users have the
+    ability to click buttons rather than type
+
+    2) I created an "ans" button, which took the previous answer displayed from an equation,
+    and moved that up to be able to be used in the next equation just by the click of the button
+    i think this also deserves extra points because it makes the user experience easier overall
+    since it allows them to use previous calculations without having to retype it every time, and
+    also goes beyond the baseline expectations of the project
+     */
     String answer;
 
     EditText equation;
